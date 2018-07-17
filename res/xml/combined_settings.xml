@@ -1,0 +1,62 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+<!-- A 'parent' preference, which enables/disables child preferences (below)
+     when checked/unchecked. -->
+<!-- // NOTFCN: DON'T DELETE
+    <SwitchPreference
+    android:defaultValue="true"
+    android:key="notification_toggle"
+    android:title="@string/pref_title_notification_toggle" /> -->
+
+<!-- NOTE: This preference will be enabled only when the checkbox above is checked. -->
+    <!-- // NOTFCN: DON'T DELETE
+    <ListPreference
+        android:dependency="notification_toggle"
+        android:defaultValue="120"
+        android:entries="@array/pref_notification_time_titles"
+        android:entryValues="@array/pref_notification_time_values"
+        android:key="notification_time"
+        android:negativeButtonText="@null"
+        android:positiveButtonText="@null"
+        android:title="@string/pref_title_notification_time" />
+
+
+-->
+
+    <!-- This preference simply launches an intent when selected. Use this UI sparingly, per
+         design guidelines. -->
+
+
+<Preference android:title="@string/pref_title_rate">
+    <intent
+        android:action="android.intent.action.VIEW"
+        android:data="https://play.google.com/store/apps/details?id=com.commongivinglabs.snaptask" />
+</Preference>
+
+<Preference android:title="@string/pref_title_all_apps">
+    <intent
+        android:action="android.intent.action.VIEW"
+        android:data="https://play.google.com/store/apps/developer?id=Common+Giving+Labs" />
+</Preference>
+
+
+<Preference android:title="@string/pref_title_feedback"
+    android:summary="Please email us to share suggestions on how we can make this app serve your needs better.... Or just to say Hello!">
+    <intent
+        android:action="android.intent.action.VIEW"
+        android:data="mailto:commongiving@gmail.com"
+        >
+        <extra android:name="android.intent.extra.SUBJECT"
+            android:value="Feedback on SnapTask" />
+    </intent>
+</Preference>
+
+    <Preference android:title="@string/pref_title_about"
+        android:summary="We are Common Giving Labs. We make tools to make you more productive and happy. Click here to visit our website">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:data="http://commongiving.org/" />
+    </Preference>
+
+</PreferenceScreen>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <!-- A 'parent' preference, which enables/disables child preferences (below)
+         when checked/unchecked. -->
+    <SwitchPreference
+        android:defaultValue="true"
+        android:key="notification_toggle"
+        android:title="@string/pref_title_notification_toggle" />
+
+    <!-- NOTE: This preference will be enabled only when the checkbox above is checked. -->
+
+    <ListPreference
+        android:dependency="notification_toggle"
+        android:defaultValue="120"
+        android:entries="@array/pref_notification_time_titles"
+        android:entryValues="@array/pref_notification_time_values"
+        android:key="notification_time"
+        android:negativeButtonText="@null"
+        android:positiveButtonText="@null"
+        android:title="@string/pref_title_notification_time" />
+
+
+
+</PreferenceScreen>
